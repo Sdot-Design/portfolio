@@ -1,0 +1,8 @@
+@import './public/variables.scss';
+
+.ProjectCard{
+    width: $sizeProjectCard;
+    height: $sizeProjectCard;
+    
+    background-color: $grayColor;
+}

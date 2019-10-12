@@ -1,0 +1,65 @@
+@import './public/variables.scss';
+
+.Menu {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+
+  &-icon {
+    width: 20px;
+    height: 18px;
+
+    >path {
+      fill: $blackColor;
+    }
+  }
+
+  &-container {
+    width: 50px;
+    height: 95px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  &-item {
+    font-family: $textFont;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: right;
+    color: $blackColor;
+
+    transition: ease-in-out all .2s;
+
+    &:hover{
+      color: $mainColor;
+
+      &::after{
+        background-color: $mainColor;
+      }
+    }
+  }
+
+  &-itemSelected{
+    position: relative;
+
+    &::after{
+     content: '';
+     width: 5px;
+     height: 5px;
+     border-radius: 5px;
+     background-color: $blackColor; 
+     display: flex;
+     flex-shrink: 0;
+
+     position: absolute;
+     right: -10px;
+     bottom: 4.5px;
+    }
+  }
+}

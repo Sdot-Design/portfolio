@@ -1,0 +1,40 @@
+import React, { useContext } from 'react';
+import { observer } from 'mobx-react-lite';
+
+import './Contact.scss';
+import Store from '../../utils/stores/Stores';
+
+const Contact = () => {
+
+  const stores = useContext(Store);
+
+  stores.uiStore.actualLink = 3;
+
+    return (
+      <div className="Contact">
+
+        <div className="Contact-contact">
+
+          <div className="Contact-leftContact">
+            <div style={{ backgroundImage: "url('./img/ContactImg.png')" }} className="Home-contactImg"></div>
+            <h5>Let’s <strong> work </strong> together!</h5>
+            <h3>sdot.about@gmail.com</h3>
+          </div>
+          <div className="Contact-rightContact">
+            <div className="Contact-containerContact">
+              <h3>More</h3>
+              <h5>About me</h5>
+              <a href="./file/CV.pdf" className="Contact-cv">Download CV</a>
+            </div>
+          </div>
+        </div>
+
+        <footer className="footer">
+          <h4>© 2019 Santiago Ortiz Guevara.</h4>
+          <h4>All rights reserved.</h4>
+        </footer>
+      </div>
+    )
+  }
+
+export default observer(Contact);

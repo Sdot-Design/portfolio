@@ -1,0 +1,15 @@
+import React from 'react';
+import './Message.scss';
+
+const Message = () => {
+
+    return (
+        <div className="Message">
+            <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M2.74999 2.75H19.25C20.2625 2.75 21.0833 3.57081 21.0833 4.58333V17.4167C21.0833 18.4292 20.2625 19.25 19.25 19.25H2.74999C1.73747 19.25 0.916656 18.4292 0.916656 17.4167V4.58333C0.916656 3.57081 1.73747 2.75 2.74999 2.75ZM2.74999 8.8166V17.4167H19.25V8.81699L11 12.942L2.74999 8.8166ZM2.74999 6.76683L11 10.8923L19.25 6.76726V4.58333H2.74999V6.76683Z" />
+            </svg>
+        </div>
+    )
+}
+
+export default Message;
