@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 import './Menu.scss';
 import Store from '../../utils/stores/Stores';
@@ -9,7 +10,7 @@ const Menu = () => {
 
     const stores = useContext(Store);
 
-    function handleHover(e){
+    function handleHover(e) {
         e.preventDefault();
         stores.uiStore.setDisplayMenu(true);
     }
@@ -22,16 +23,18 @@ const Menu = () => {
     function displayMenu() {
         if (stores.uiStore.displayMenu) {
             return (
-                <div className="Menu-container">
-                    {stores.uiStore.arrayLink.map((link) => {
-                        let stringClass = (stores.uiStore.actualLink === link.id) ? "Menu-item Menu-itemSelected" : "Menu-item";
-                        return (
-                            <Link key={link.id} to={link.link}>
-                                <h2 className={stringClass}>{link.name}</h2>
-                            </Link>
-                        )
-                    })}
-                </div>
+                <Fade timeout={750}>
+                    <div className="Menu-container">
+                        {stores.uiStore.arrayLink.map((link) => {
+                            let stringClass = (stores.uiStore.actualLink === link.id) ? "Menu-item Menu-itemSelected" : "Menu-item";
+                            return (
+                                <Link key={link.id} to={link.link}>
+                                    <h2 className={stringClass}>{link.name}</h2>
+                                </Link>
+                            )
+                        })}
+                    </div>
+                </Fade>
             )
         } else {
             return (

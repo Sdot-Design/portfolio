@@ -19,7 +19,7 @@ const Projects = () => {
       <div className="Projects-containter">
         {stores.uiStore.arrayProjects.map((elem) => {
           return (
-            <Fade timeout={1250} delay={elem.id * 500}>
+            <Fade timeout={1250} delay={elem.id * 350}>
               <ProjectCard key={elem.id} project={elem} />
             </Fade>
           )
