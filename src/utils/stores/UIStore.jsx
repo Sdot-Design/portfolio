@@ -57,7 +57,7 @@ class UIStore {
 
     displayMenu = false;
 
-    setDisplayMenu(value){
+    setDisplayMenu(value) {
         this.displayMenu = value;
     }
 
@@ -68,60 +68,65 @@ class UIStore {
     typeTalent = 'talent';
 
     arrayInfo = [{
-        name: 'Prototyping',
+        name: 'UX Design - Prototyping',
         id: 0,
+        icon: 1,
         type: 'skill',
-        data: '[insert info]'
-    }, {
-        name: 'UX Design',
-        id: 1,
-        type: 'skill',
-        data: '[insert info]'
+        data: [12, 13]
     }, {
         name: 'UI Design',
-        id: 2,
+        id: 1,
+        icon: 2,
         type: 'skill',
-        data: '[insert info]'
+        data: [12, 16, 17, 18]
     }, {
         name: 'Web Development',
-        id: 3,
+        id: 2,
+        icon: 3,
         type: 'skill',
-        data: '[insert info]'
+        data: [4, 5, 6, 7, 20]
     }, {
         name: 'App Development',
-        id: 4,
+        id: 3,
+        icon: 4,
         type: 'skill',
-        data: '[insert info]'
+        data: [6, 7, 10]
     }, {
         name: 'Game Development',
-        id: 5,
+        id: 4,
+        icon: 5,
         type: 'skill',
-        data: '[insert info]'
+        data: [8, 9, 11]
     }, {
         name: '3D Modeling',
-        id: 6,
+        id: 5,
+        icon: 6,
         type: 'skill',
-        data: '[insert info]'
+        data: [14, 15]
     }, {
         name: 'Creativity',
-        id: 7,
+        id: 6,
+        icon: 7,
         type: 'talent',
-        data: '[insert info]'
+        data: "Constantly observing what surrounds me holistically, allows me to strengthen my work generating new ideas."
     }, {
         name: 'Problem Solving',
-        id: 8,
+        id: 7,
+        icon: 8,
         type: 'talent',
-        data: '[insert info]'
+        data: "Using research through design to find solutions for people's challenges, complexities & needs."
     }, {
         name: 'Results Orientation',
-        id: 9,
+        id: 8,
+        icon: 9,
         type: 'talent',
-        data: '[insert info]'
+        data: "Constantly remembering the objective and goals, allows my work to satisfy the required guidelines."
     }, {
         name: 'Team Work',
-        id: 10,
+        id: 9,
+        icon: 10,
         type: 'talent',
-        data: '[insert info]'
+        data: "Working with my colleagues to achieve the objectives. I find my place to strengthen the work of my workmates."
     }]
 
     actualInfo = this.arrayInfo[this.idActualInfo];

@@ -316,12 +316,32 @@
       font-family: $textFont;
       font-style: normal;
       font-weight: normal;
-      font-size: 13px;
-      line-height: 25px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
 
       text-align: center;
 
       color: $whiteColor;
+    }
+  }
+
+  &-contSofware{
+    width: 100%;
+    height: 45px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    >img{
+      width: 40px;
+      height: 40px;
+
+      margin: 0 5px;
     }
   }
 

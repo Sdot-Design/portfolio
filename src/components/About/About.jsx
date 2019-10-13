@@ -17,6 +17,34 @@ const About = () => {
 
   stores.uiStore.actualLink = 1;
 
+  function changeRightInfoHandler(value) {
+    return (
+      <div className="About-infoRight">
+        <Fade timeout={1000} top>
+          <div className="About-infoImg"></div>
+        </Fade>
+        <Fade timeout={1250} delay={150} right>
+          <div className="About-infoDetail">
+            <h3>{value.name}</h3>
+            {(value.type === 'talent') ?
+              <h5>{value.data}</h5> : ''}
+            {(value.type === 'skill') ?
+              <div className="About-contSofware">
+                {value.data.map((idImg, id) => {
+                  return (
+                    <Fade key={idImg} timeout={1000} delay={id*100}>
+                      <img src={`./img/iconSoftware/${idImg}.png`} alt="software logo" />
+                    </Fade>
+                    )
+                })}
+              </div>
+              : ''}
+          </div>
+        </Fade>
+      </div>
+    )
+  }
+
   return (
     <div className="About">
 
@@ -65,7 +93,7 @@ const About = () => {
                       stores.uiStore.changeInfoHandler(elem.id);
                     }} key={elem.id} className={classInfo}>
 
-                      <InfoSVG i={elem.id} selected={elem.id === stores.uiStore.idActualInfo} />
+                      <InfoSVG i={elem.icon} selected={elem.id === stores.uiStore.idActualInfo} />
 
                     </div>
                   </Fade>
@@ -88,7 +116,7 @@ const About = () => {
                       e.preventDefault();
                       stores.uiStore.changeInfoHandler(elem.id);
                     }} key={elem.id} className={classInfo}>
-                      <InfoSVG i={elem.id} selected={elem.id === stores.uiStore.idActualInfo} />
+                      <InfoSVG i={elem.icon} selected={elem.id === stores.uiStore.idActualInfo} />
                     </div>
                   </Fade>
                 )
@@ -99,20 +127,8 @@ const About = () => {
           </div>
 
         </div>
-
-        <div className="About-infoRight">
-
-          <Fade timeout={1000} top>
-            <div className="About-infoImg"></div>
-          </Fade>
-          <Fade timeout={1250} delay={150} right>
-            <div className="About-infoDetail">
-              <h3>{stores.uiStore.actualInfo.name}</h3>
-              <h5>[info here]</h5>
-            </div>
-          </Fade>
-        </div>
-      </div>
+        {changeRightInfoHandler(stores.uiStore.actualInfo)}
+      </div >
 
       <div className="About-research">
         <div className="About-researchLeft">
