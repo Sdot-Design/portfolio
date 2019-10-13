@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import './Projects.scss';
@@ -7,9 +7,13 @@ import { observer } from 'mobx-react-lite';
 import ProjectCard from '../ProjectCard/ProjectCard';
 
 const Projects = () => {
-  window.scrollTo(0, 0);
 
   const stores = useContext(Store);
+
+  //if the second value of useEffect is empty array [], the behavior its the same as componentDidMount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   stores.uiStore.actualLink = 2;
 
@@ -19,8 +23,8 @@ const Projects = () => {
       <div className="Projects-containter">
         {stores.uiStore.arrayProjects.map((elem) => {
           return (
-            <Fade timeout={1250} delay={elem.id * 350}>
-              <ProjectCard key={elem.id} project={elem} />
+            <Fade key={elem.id} timeout={1250} delay={elem.id * 350}>
+              <ProjectCard project={elem} />
             </Fade>
           )
         })}

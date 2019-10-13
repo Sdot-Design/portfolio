@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import Fade from 'react-reveal/Fade';
@@ -8,16 +8,20 @@ import Store from '../../utils/stores/Stores';
 import { WhatIDoSVG } from '../../utils/JSHelpers/Helper';
 
 const Home = () => {
-  window.scrollTo(0,0);
-  
   const stores = useContext(Store);
+
+  //if the second value of useEffect is empty array [], the behavior its the same as componentDidMount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   stores.uiStore.actualLink = 0;
 
   return (
     <div className="Home">
+
       <div className="Home-top">
-        <Fade top timeout={750}>
+        <Fade top timeout={1250}>
           <div style={{ backgroundImage: "url('./img/imgPortada.jpg')" }} className="Home-img">
             <svg viewBox="0 0 14 165" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.89062 16.1299L7.60254 16.125C7.99967 16.125 8.35286 16.1803 8.66211 16.291C8.97135 16.3984 9.2334 16.5563 9.44824 16.7646C9.65983 16.9697 9.82096 17.222 9.93164 17.5215C10.0423 17.8177 10.0977 18.1562 10.0977 18.5371C10.0977 18.8952 10.0423 19.2191 9.93164 19.5088C9.82096 19.7952 9.65983 20.041 9.44824 20.2461C9.23665 20.4512 8.97624 20.6107 8.66699 20.7246C8.35449 20.8353 7.99967 20.8906 7.60254 20.8906L2.89062 20.8857L2.89062 19.5137L7.60254 19.5088C8.06152 19.5055 8.4082 19.4225 8.64258 19.2598C8.87695 19.0937 8.99414 18.8529 8.99414 18.5371C8.99414 18.2018 8.87695 17.9463 8.64258 17.7705C8.4082 17.5915 8.06152 17.5003 7.60254 17.4971L2.89062 17.4922L2.89062 16.1299ZM5.43945 12.4531L2.89062 11.1885L2.89062 9.57715L6.41601 11.5791L10 9.52832L10 11.1299L7.41211 12.4336L10 13.7324L10 15.3535L6.41601 13.3027L2.89062 15.2998L2.89062 13.6982L5.43945 12.4531Z" fill="#232323" />
@@ -28,7 +32,7 @@ const Home = () => {
             </svg>
           </div>
         </Fade>
-        <Fade timeout={750} cascade delay={350}>
+        <Fade timeout={750} cascade delay={550}>
           <div className="Home-topInfo">
             <h3>Hi, I’m Santiago</h3>
             <h4>My <strong>creativity</strong> allows me to build <strong className="Home-strongColor">experiences</strong> & <strong className="Home-strongColor">interfaces</strong></h4>
@@ -85,7 +89,6 @@ const Home = () => {
         </div>
       </div>
 
-
       <div className="Home-contact">
         <div className="Home-leftContact">
 
@@ -112,6 +115,7 @@ const Home = () => {
         <h4>© 2019 Santiago Ortiz Guevara.</h4>
         <h4>All rights reserved.</h4>
       </footer>
+      
     </div>
   )
 }

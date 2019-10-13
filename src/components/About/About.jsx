@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import Fade from 'react-reveal/Fade';
 
@@ -7,9 +7,13 @@ import Store from '../../utils/stores/Stores';
 import { InfoSVG } from '../../utils/JSHelpers/Helper';
 
 const About = () => {
-  window.scrollTo(0,0);
-  
+
   const stores = useContext(Store);
+
+  //if the second value of useEffect is empty array [], the behavior its the same as componentDidMount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   stores.uiStore.actualLink = 1;
 
@@ -20,7 +24,7 @@ const About = () => {
         <div className="About-topLeft">
 
           <Fade timeout={1000} left>
-            <div style={{ backgroundImage: "url('./img/imgPortada.jpg')" }} className="About-img">
+            <div style={{ backgroundImage: "url('./img/about.jpg')" }} className="About-img">
               <div className="About-name">
                 <h4>Santiago</h4>
                 <h6>Ortiz Guevara</h6>
@@ -55,7 +59,7 @@ const About = () => {
               let classInfo = (elem.id === stores.uiStore.idActualInfo) ? "About-infoItem About-infoItemSelected" : "About-infoItem";
               if (elem.type === stores.uiStore.typeSkill) {
                 return (
-                  <Fade timeout={1000} delay={elem.id * 150}>
+                  <Fade key={elem.id} timeout={1000} delay={elem.id * 150}>
                     <div onClick={(e) => {
                       e.preventDefault();
                       stores.uiStore.changeInfoHandler(elem.id);
@@ -79,7 +83,7 @@ const About = () => {
               let classInfo = (elem.id === stores.uiStore.idActualInfo) ? "About-infoItem About-infoItemSelected" : "About-infoItem";
               if (elem.type === stores.uiStore.typeTalent) {
                 return (
-                  <Fade timeout={1000} delay={elem.id * 150}>
+                  <Fade key={elem.id} timeout={1000} delay={elem.id * 150}>
                     <div onClick={(e) => {
                       e.preventDefault();
                       stores.uiStore.changeInfoHandler(elem.id);
@@ -119,7 +123,7 @@ const About = () => {
             </Fade>
             <Fade timeout={1000} delay={250} left>
               <h4>2019</h4>
-              <h6>Thesis (Cooming Soon!)</h6>
+              <h6>Thesis (Coming Soon!)</h6>
             </Fade>
           </div>
         </div>
