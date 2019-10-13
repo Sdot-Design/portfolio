@@ -1,6 +1,6 @@
 @import './public/variables.scss';
 
-.Projects{
+.Projects {
   width: $widthSize;
   height: auto;
   flex-shrink: 0;
@@ -16,7 +16,7 @@
 
   /** Container **/
 
-  &-containter{
+  &-containter {
     width: 100%;
     height: auto;
     min-height: 100vh;
@@ -29,10 +29,27 @@
     align-items: flex-start;
   }
 
-  &-moreProjects{
+  &-moreProjects {
     width: $sizeProjectCard;
     height: $sizeProjectCard;
-    background-color: $grayColor;
+    background-color: $blackColor;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    >h3 {
+      font-family: $titleFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: $whiteColor;
+    }
   }
 
   /** Footer **/

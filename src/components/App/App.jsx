@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Route, Switch, HashRouter, Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import './App.scss';
 
-import Store from '../../utils/stores/Stores';
+//import Store from '../../utils/stores/Stores';
 
 import Message from '../Message/Message';
 import Menu from '../Menu/Menu';
@@ -14,7 +14,7 @@ import Contact from '../Contact/Contact';
 
 const App = () => {
 
-  const stores = useContext(Store);
+  //const stores = useContext(Store);
 
     return (
       <div className="App">
