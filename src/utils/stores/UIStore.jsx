@@ -138,7 +138,6 @@ class UIStore {
 
     /** Projects **/
 
-
     arrayProjects = [{
         id: 0,
         name: 'Project 1',
@@ -170,7 +169,6 @@ decorate(UIStore, {
     actualInfo: observable,
     changeInfoHandler: action,
     arrayProjects: observable
-
 });
 
 export default UIStore;

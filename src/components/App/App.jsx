@@ -10,6 +10,7 @@ import Home from '../Home/Home';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
+import ProjectView from 'components/ProjectView/ProjectView';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/about" component={About} exact />
           <Route path="/projects" component={Projects} exact />
           <Route path="/contact" component={Contact} exact />
+          <Route path="/project/:id" component={ProjectView} exact />
         </Switch>
 
         <Logo />
