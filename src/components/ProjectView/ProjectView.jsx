@@ -1,7 +1,9 @@
 import React from 'react';
+/*
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import Fade from 'react-reveal/Fade';
+*/
 
 //import stores from '../../utils/stores/Stores';
 

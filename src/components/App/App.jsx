@@ -11,6 +11,7 @@ import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
 import ProjectView from 'components/ProjectView/ProjectView';
+import ErrorPage from 'components/ErrorPage/ErrorPage';
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/projects" component={Projects} exact />
           <Route path="/contact" component={Contact} exact />
           <Route path="/project/:id" component={ProjectView} exact />
+          <Route path="/*" component={ErrorPage} />
         </Switch>
 
         <Logo />

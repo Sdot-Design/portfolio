@@ -7,7 +7,6 @@ import Store from '../../utils/stores/Stores';
 import { InfoSVG } from '../../utils/JSHelpers/Helper';
 
 const About = () => {
-
   const stores = useContext(Store);
 
   //if the second value of useEffect is empty array [], the behavior its the same as componentDidMount
