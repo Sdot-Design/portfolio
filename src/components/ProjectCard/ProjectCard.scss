@@ -14,6 +14,8 @@
     }
 
     &-info{
+        padding: 35px;
+
         background-color: $whiteColor;
 
         width: 100%;
@@ -22,5 +24,12 @@
         top: 0;
 
         position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
     }
 }
