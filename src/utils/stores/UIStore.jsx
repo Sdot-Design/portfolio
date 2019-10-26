@@ -136,22 +136,6 @@ class UIStore {
         this.actualInfo = this.arrayInfo[this.idActualInfo];
     }
 
-    /** Projects **/
-
-    arrayProjects = [{
-        id: 0,
-        name: 'Project 1',
-        type: 'x'
-    }, {
-        id: 1,
-        name: 'Project 2',
-        type: 'x'
-    }, {
-        id: 2,
-        name: 'Project 3',
-        type: 'x'
-    }];
-
     /** EndFunction **/
 }
 
@@ -167,8 +151,7 @@ decorate(UIStore, {
     typeTalent: observable,
     arrayInfo: observable,
     actualInfo: observable,
-    changeInfoHandler: action,
-    arrayProjects: observable
+    changeInfoHandler: action
 });
 
 export default UIStore;

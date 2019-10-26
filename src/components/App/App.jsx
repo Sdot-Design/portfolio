@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import './App.scss';
 
-//import Store from '../../utils/stores/Stores';
+import Store from '../../utils/stores/Stores';
 
 import { Menu, Logo, MenuSocialMedia, Message } from '../UIMenu/UIMenu';
 import Home from '../Home/Home';
@@ -15,7 +15,12 @@ import ErrorPage from 'components/ErrorPage/ErrorPage';
 
 const App = () => {
 
-  //const stores = useContext(Store);
+  const stores = useContext(Store);
+
+  //if the second value of useEffect is empty array [], the behavior its the same as componentDidMount
+  useEffect(() => {
+    stores.projectStore.sortArrayProjects();
+  }, [stores.projectStore]);
 
   return (
     <div className="App">

@@ -21,9 +21,9 @@ const Projects = () => {
     <div className="Projects">
 
       <div className="Projects-containter">
-        {stores.uiStore.arrayProjects.map((elem) => {
+        {stores.projectStore.arrayProjects.map((elem, index) => {
           return (
-            <Fade key={elem.id} timeout={1250} delay={elem.id * 350}>
+            <Fade key={elem.id} timeout={1250} delay={index * 350}>
               <ProjectCard project={elem} />
             </Fade>
           )

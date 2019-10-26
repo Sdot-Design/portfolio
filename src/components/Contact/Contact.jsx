@@ -35,7 +35,7 @@ const Contact = () => {
           <div className="Contact-containerContact">
             <h3>More</h3>
             <h5>About me</h5>
-            <a href="./file/CV.pdf" className="Contact-cv">Download CV</a>
+            <a target='_blank' rel='noopener noreferrer' href="./file/CV.pdf" className="Contact-cv">Download CV</a>
           </div>
         </div>
       </div>

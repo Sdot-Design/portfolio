@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 import './Home.scss';
 import Store from '../../utils/stores/Stores';
 import { WhatIDoSVG } from '../../utils/JSHelpers/Helper';
+import ProjectCard from 'components/ProjectCard/ProjectCard';
 
 const Home = () => {
   const stores = useContext(Store);
@@ -73,12 +74,16 @@ const Home = () => {
         </Fade>
         <div className="Home-rightRecent">
           <div className="Home-containerRecent">
-            <Fade timeout={1000} top>
-              <div className="Home-project"></div>
-            </Fade>
-            <Fade timeout={1000} delay={50} top>
-              <div className="Home-project"></div>
-            </Fade>
+            {stores.projectStore.arrayProjects.map((elem, index) => {
+              if (index >= 2) {
+                return ('');
+              }
+              return (
+                <Fade key={elem.id} top timeout={1250} delay={elem.id * 125}>
+                  <ProjectCard project={elem} />
+                </Fade>
+              )
+            })}
           </div>
 
           <Link to="/projects">
@@ -106,7 +111,7 @@ const Home = () => {
           <div className="Home-containerContact">
             <h3>More</h3>
             <h5>About me</h5>
-            <a href="./file/CV.pdf" className="Home-cv">Download CV</a>
+            <a target='_blank' rel='noopener noreferrer' href="./file/CV.pdf" className="Home-cv">Download CV</a>
           </div>
         </div>
       </div>
@@ -115,7 +120,7 @@ const Home = () => {
         <h4>© 2019 Santiago Ortiz Guevara.</h4>
         <h4>All rights reserved.</h4>
       </footer>
-      
+
     </div>
   )
 }
