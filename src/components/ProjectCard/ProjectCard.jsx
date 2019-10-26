@@ -10,11 +10,10 @@ const ProjectCard = (props) => {
 
     return (
         <div onMouseOver={() => { setDisplayCard(true) }} onMouseLeave={() => { setDisplayCard(false) }} className="ProjectCard">
-            <div className="ProjectCard-background">
+            
+            <img className="ProjectCard-background" src="./img/grayBackground.png" alt="Project img"/>
 
-            </div>
-
-            <Fade collapse timeout={350} in={displayCard} exit>
+            <Fade collapse timeout={500} in={displayCard} exit>
                 <div className="ProjectCard-info">
                     <Link to={`/project/${props.project.id}`}>
                         <h3>View</h3>
