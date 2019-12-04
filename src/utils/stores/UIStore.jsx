@@ -71,42 +71,42 @@ class UIStore {
         name: 'Web Development',
         id: 0,
         icon: 3,
-        img: './img/grayBackground.png',
+        img: './img/about/webDev.png',
         type: 'skill',
         data: [4, 5, 6, 7, 20]
     }, {
         name: 'App Development',
         id: 1,
         icon: 4,
-        img: './img/grayBackground.png',
+        img: './img/about/appDev.png',
         type: 'skill',
         data: [6, 7, 10]
     },{
         name: 'UX Design - Prototyping',
         id: 2,
         icon: 1,
-        img: './img/grayBackground.png',
+        img: './img/about/ux.png',
         type: 'skill',
         data: [12, 13]
     }, {
         name: 'UI Design',
         id: 3,
         icon: 2,
-        img: './img/grayBackground.png',
+        img: './img/about/ui.png',
         type: 'skill',
         data: [12, 16, 17, 18]
     },{
         name: 'Game Development',
         id: 4,
         icon: 5,
-        img: './img/grayBackground.png',
+        img: './img/about/gameDev.png',
         type: 'skill',
         data: [8, 9, 11]
     }, {
         name: '3D Modeling',
         id: 5,
         icon: 6,
-        img: './img/grayBackground.png',
+        img: './img/about/3dModeling.png',
         type: 'skill',
         data: [14, 15]
     }, {
