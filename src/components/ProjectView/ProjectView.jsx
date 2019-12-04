@@ -87,6 +87,10 @@ const ProjectView = (props) => {
                 </Fade>
             </div>
 
+            <h3 className="ProjectView-moreTitle">
+                Do you want to know more?
+            </h3>
+
             <Fade timeout={1250} delay={250}>
                 <div className="ProjectView-options">
 

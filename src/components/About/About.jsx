@@ -18,29 +18,27 @@ const About = () => {
 
   function changeRightInfoHandler(value) {
     return (
-      <div className="About-infoRight">
-        <Fade timeout={1000} top>
-          <div className="About-infoImg"></div>
-        </Fade>
-        <Fade timeout={1250} delay={150} right>
-          <div className="About-infoDetail">
-            <h3>{value.name}</h3>
-            {(value.type === 'talent') ?
-              <h5>{value.data}</h5> : ''}
-            {(value.type === 'skill') ?
-              <div className="About-contSofware">
-                {value.data.map((idImg, id) => {
-                  return (
-                    <Fade key={idImg} timeout={1000} delay={id*100}>
-                      <img src={`./img/iconSoftware/${idImg}.png`} alt="software logo" />
-                    </Fade>
-                    )
-                })}
-              </div>
-              : ''}
-          </div>
-        </Fade>
-      </div>
+      <Fade timeout={1000} delay={150} right>
+        <div className="About-infoRight">
+            <img className="About-infoImg" src={`${value.img}`} alt="Imagen"/>
+            <div className="About-infoDetail">
+              <h3>{value.name}</h3>
+              {(value.type === 'talent') ?
+                <h5>{value.data}</h5> : ''}
+              {(value.type === 'skill') ?
+                <div className="About-contSofware">
+                  {value.data.map((idImg, id) => {
+                    return (
+                      <Fade key={idImg} timeout={1000} delay={id*100}>
+                        <img src={`./img/iconSoftware/${idImg}.png`} alt="software logo" />
+                      </Fade>
+                      )
+                  })}
+                </div>
+                : ''}
+            </div>
+        </div>
+      </Fade>
     )
   }
 

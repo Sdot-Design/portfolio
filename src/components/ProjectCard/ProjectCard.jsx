@@ -16,7 +16,7 @@ const ProjectCard = (props) => {
             <Fade collapse timeout={750} in={displayCard} exit>
                 <div className="ProjectCard-info">
                     <Link to={`/project/${props.project.id}`}>
-                        <h3>View</h3>
+                        <h3>see more</h3>
                     </Link>
                 </div>
             </Fade>

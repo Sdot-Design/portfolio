@@ -5,6 +5,7 @@ import './Projects.scss';
 import Store from '../../utils/stores/Stores';
 import { observer } from 'mobx-react-lite';
 import ProjectCard from '../ProjectCard/ProjectCard';
+import ComingCard from '../ComingCard/ComingCard';
 
 const Projects = () => {
 
@@ -23,11 +24,15 @@ const Projects = () => {
       <div className="Projects-containter">
         {stores.projectStore.arrayProjects.map((elem, index) => {
           return (
-            <Fade key={elem.id} timeout={1250} delay={index * 350}>
-              <ProjectCard project={elem} />
-            </Fade>
-          )
-        })}
+            (elem.type === "coming") ?
+              <Fade key={index} timeout={1250} delay={index * 350}>
+                <ComingCard project={elem} />
+              </Fade> :
+              <Fade key={index} timeout={1250} delay={index * 350}>
+                <ProjectCard project={elem} />
+              </Fade>)
+        }
+        )}
         <Fade timeout={1250} delay={1000} bottom>
           <div className="Projects-moreProjects">
             <h3>Coming soon!</h3>

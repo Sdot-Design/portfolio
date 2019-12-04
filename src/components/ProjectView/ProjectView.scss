@@ -232,6 +232,24 @@
         align-items: flex-end;
     }
 
+    &-moreTitle {
+        width: 100%;
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 33px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: $mainColor;
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
     &-contButtons {
         height: 45px;
 
@@ -344,7 +362,7 @@
         }
     }
 
-    &-contBuild{
+    &-contBuild {
         height: 45px;
         width: 100%;
 
@@ -355,7 +373,7 @@
         align-content: center;
         align-items: center;
 
-        >img{
+        >img {
             width: 45px;
             height: 45px;
         }
