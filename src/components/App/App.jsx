@@ -5,7 +5,7 @@ import './App.scss';
 
 import Store from '../../utils/stores/Stores';
 
-import { Menu, Logo, MenuSocialMedia, Message } from '../UIMenu/UIMenu';
+import { Menu, Logo, MenuSocialMedia, Message, ScrollIcon } from '../UIMenu/UIMenu';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
@@ -39,6 +39,7 @@ const App = () => {
         <Logo />
         <MenuSocialMedia />
         <Menu />
+        <ScrollIcon />
         <Message />
 
       </HashRouter>

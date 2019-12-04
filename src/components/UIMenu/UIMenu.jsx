@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
+import Lottie from 'react-lottie';
+import * as scrollData from '../../utils/lottie/scroll.json';
+
 import './UIMenu.scss';
 import Store from '../../utils/stores/Stores';
 import { observer } from 'mobx-react-lite';
@@ -106,3 +109,24 @@ export const Message = () => {
         </Fade>
     )
 }
+
+export const ScrollIcon = () => {
+
+    const options = {
+        loop: true,
+        autoplay: true, 
+        animationData: scrollData.default,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+      };
+
+    return (
+        <Fade collapse timeout={1750} right>
+            <div className="ScrollAnimation" >
+                <Lottie options={options}/>
+            </div>
+        </Fade>
+    )
+}
+
